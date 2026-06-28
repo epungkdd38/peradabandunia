@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal admin Pilar Peradaban Dunia.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Admin | Pilar Peradaban Dunia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260627-10">
+</head>
+<body class="admin-page admin-locked">
+  <header class="site-header admin-topbar" id="adminTopbar">
+    <a class="brand" href="index.html" aria-label="Pilar Peradaban Dunia">
+      <img class="brand-logo" src="assets/logo-pilar.svg" alt="Yayasan Pilar Peradaban Dunia">
+      <span>
+        <strong id="brandName">Pilar Peradaban Dunia</strong>
+        <small id="brandTagline">Portal Admin</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi admin">
+      <a href="index.html">Lihat Website</a>
+    </nav>
+    <div class="admin-actions">
+      <button class="secondary-action compact" id="logoutAdmin" type="button" hidden>Logout</button>
+      <button class="secondary-action compact" id="exportData" type="button" hidden>Export Data</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="admin-section admin-page-section" id="admin">
+      <div class="admin-login" id="adminLogin">
+        <form class="login-card" id="loginForm">
+          <p class="eyebrow">Login admin</p>
+          <h3>Masuk ke Portal Admin Pilar Peradaban Dunia.</h3>
+          <p class="login-copy">Akses dashboard, katalog buku, halaman website, warna tampilan, footer, dan tracking order dari satu tempat kerja.</p>
+          <input name="username" autocomplete="username" placeholder="Username admin" required>
+          <input name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+          <button class="primary-action full" type="submit">Masuk Admin</button>
+          <p class="login-hint">Akses hanya untuk pengelola website.</p>
+        </form>
+      </div>
+
+      <div class="admin-portal" id="adminPanel" hidden>
+        <div class="admin-portal-head">
+          <div>
+            <p class="eyebrow">Portal admin</p>
+            <h1>Dashboard pengelolaan website</h1>
+            <p>Kelola identitas web, katalog buku, halaman, footer, dan order pelanggan.</p>
+          </div>
+          <a class="secondary-action compact" href="index.html">Lihat Website</a>
+        </div>
+
+        <aside class="admin-sidebar" aria-label="Menu admin">
+          <button class="admin-tab active" type="button" data-admin-tab="dashboard">Dashboard</button>
+          <button class="admin-tab" type="button" data-admin-tab="identity">Identitas Web</button>
+          <button class="admin-tab" type="button" data-admin-tab="theme">Warna Halaman</button>
+          <button class="admin-tab" type="button" data-admin-tab="books">Konten Buku</button>
+          <button class="admin-tab" type="button" data-admin-tab="pages">Page & Menu</button>
+          <button class="admin-tab" type="button" data-admin-tab="footer">Footer</button>
+          <button class="admin-tab" type="button" data-admin-tab="orders">Tracking Order</button>
+        </aside>
+
+        <div class="admin-workspace">
+          <section class="admin-pane active" data-admin-pane="dashboard">
+            <div class="portal-cards">
+              <article><strong id="portalBookCount">0</strong><span>Buku aktif</span></article>
+              <article><strong id="portalPageCount">0</strong><span>Page tambahan</span></article>
+              <article><strong id="portalOrderCount">0</strong><span>Order tercatat</span></article>
+            </div>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="identity">
+            <form class="admin-form" id="identityForm">
+              <h3>Identitas website</h3>
+              <input name="brand_name" placeholder="Nama brand">
+              <input name="brand_tagline" placeholder="Tagline kecil di header">
+              <input name="brand_mark" placeholder="Teks logo singkat, contoh: PPD">
+              <input name="meta_description" placeholder="Meta description SEO">
+              <input name="hero_eyebrow" placeholder="Eyebrow hero">
+              <textarea name="hero_title" rows="2" placeholder="Judul hero"></textarea>
+              <textarea name="hero_copy" rows="3" placeholder="Deskripsi hero"></textarea>
+              <input name="hero_panel_text" placeholder="Teks panel hero">
+              <input name="hero_panel_strong" placeholder="Teks tebal panel hero">
+              <input name="whatsapp_number" placeholder="Nomor WhatsApp, contoh: 62812...">
+              <button class="primary-action full" type="submit">Simpan Identitas</button>
+            </form>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="theme">
+            <form class="admin-form" id="themeForm">
+              <h3>Warna halaman</h3>
+              <div class="color-grid">
+                <label><span>Teks utama</span><input name="color_ink" type="color"></label>
+                <label><span>Background</span><input name="color_paper" type="color"></label>
+                <label><span>Panel</span><input name="color_panel" type="color"></label>
+                <label><span>Hijau brand</span><input name="color_green" type="color"></label>
+                <label><span>Merah aksen</span><input name="color_red" type="color"></label>
+                <label><span>Emas aksen</span><input name="color_gold" type="color"></label>
+                <label><span>Katalog</span><input name="color_cream" type="color"></label>
+              </div>
+              <button class="primary-action full" type="submit">Simpan Warna</button>
+            </form>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="books">
+            <div class="admin-layout compact-layout">
+              <form class="admin-form" id="bookForm">
+                <h3>Tambah / update buku</h3>
+                <input name="id" type="hidden">
+                <input name="existingCoverImage" type="hidden">
+                <input name="title" placeholder="Judul buku" required>
+                <input name="author" placeholder="Penulis" required>
+                <input name="isbn" placeholder="ISBN / SKU">
+                <div class="form-row">
+                  <input name="price" type="number" min="0" placeholder="Harga" required>
+                  <input name="stock" type="number" min="0" placeholder="Stok" required>
+                </div>
+                <input name="priceLabel" placeholder="Label harga opsional, contoh: Hubungi Kami">
+                <div class="form-row">
+                  <select name="source" required>
+                    <option value="Terbitan PPD">Terbitan Pilar Peradaban Dunia</option>
+                    <option value="Distributor">Buku Distributor</option>
+                    <option value="Titipan">Buku Titipan</option>
+                  </select>
+                  <select name="category" required>
+                    <option value="Sejarah">Sejarah</option>
+                    <option value="Agama">Agama</option>
+                    <option value="Pendidikan">Pendidikan</option>
+                    <option value="Sosial">Sosial</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Biografi">Biografi</option>
+                  </select>
+                </div>
+                <label class="file-field">
+                  <span>Cover buku (JPG/PNG/WEBP, maks. 2 MB)</span>
+                  <input name="coverImage" type="file" accept="image/png,image/jpeg,image/webp">
+                </label>
+                <div class="cover-preview" id="coverPreview">Belum ada cover</div>
+                <textarea name="shortDescription" rows="2" placeholder="Deskripsi pendek untuk kartu katalog"></textarea>
+                <textarea name="description" rows="5" placeholder="Deskripsi panjang untuk halaman detail buku"></textarea>
+                <div class="form-row">
+                  <button class="primary-action full" type="submit">Simpan Buku</button>
+                  <button class="secondary-action full" id="resetBookForm" type="button">Form Baru</button>
+                </div>
+              </form>
+              <div class="orders-panel">
+                <div class="panel-top"><h3>Daftar buku</h3></div>
+                <div class="admin-list" id="adminBookList"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="pages">
+            <div class="admin-layout compact-layout">
+              <form class="admin-form" id="pageForm">
+                <h3>Tambah page & menu</h3>
+                <input name="id" type="hidden">
+                <input name="menuLabel" placeholder="Label menu, contoh: Program" required>
+                <input name="slug" placeholder="Slug halaman, contoh: program">
+                <input name="title" placeholder="Judul halaman" required>
+                <textarea name="content" rows="8" placeholder="Konten halaman" required></textarea>
+                <div class="form-row">
+                  <input name="menuOrder" type="number" min="0" placeholder="Urutan menu" value="99">
+                  <select name="isMenu">
+                    <option value="1">Tampilkan di menu</option>
+                    <option value="0">Jangan tampil di menu</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <button class="primary-action full" type="submit">Simpan Page</button>
+                  <button class="secondary-action full" id="resetPageForm" type="button">Form Baru</button>
+                </div>
+              </form>
+              <div class="orders-panel">
+                <div class="panel-top"><h3>Page tambahan</h3></div>
+                <div class="admin-list" id="adminPageList"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="footer">
+            <form class="admin-form" id="footerForm">
+              <h3>Keterangan footer</h3>
+              <input name="footer_title" placeholder="Judul footer">
+              <textarea name="footer_description" rows="3" placeholder="Keterangan footer"></textarea>
+              <input name="footer_link_text" placeholder="Teks link footer">
+              <button class="primary-action full" type="submit">Simpan Footer</button>
+            </form>
+          </section>
+
+          <section class="admin-pane" data-admin-pane="orders">
+            <div class="orders-panel">
+              <div class="panel-top">
+                <h3>Tracking order</h3>
+                <select id="orderFilter" aria-label="Filter status order">
+                  <option value="all">Semua</option>
+                  <option value="Baru">Baru</option>
+                  <option value="Diproses">Diproses</option>
+                  <option value="Dikirim">Dikirim</option>
+                  <option value="Selesai">Selesai</option>
+                </select>
+              </div>
+              <div class="order-list" id="orderList"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="customPages" hidden></div>
+  <script src="script.js?v=20260627-14"></script>
+</body>
+</html>

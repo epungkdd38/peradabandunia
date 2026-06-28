@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detail buku Pilar Peradaban Dunia.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="icon" href="assets/logo-pilar.svg" type="image/svg+xml">
+  <title>Detail Buku | Pilar Peradaban Dunia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260627-10">
+</head>
+<body class="book-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Pilar Peradaban Dunia">
+      <img class="brand-logo" src="assets/logo-pilar.svg" alt="Yayasan Pilar Peradaban Dunia">
+      <span>
+        <strong id="brandName">Pilar Peradaban Dunia</strong>
+        <small id="brandTagline">Penerbit & Book Services</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="about.php">Tentang</a>
+      <a href="index.html#layanan">Layanan</a>
+      <a href="index.html#katalog">Katalog</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="header-actions">
+      <a class="wa-action" id="headerWa" href="https://wa.me/628993998544" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section product-page">
+      <div class="product-shell" id="productDetail">
+        <div class="product-cover"><strong>Memuat detail buku...</strong></div>
+        <article class="product-info">
+          <a class="secondary-action compact" href="index.html#katalog">Kembali ke Katalog</a>
+          <h1>Memuat detail buku</h1>
+          <p class="detail-description">Mohon tunggu sebentar.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button class="cart-toggle cart-bubble" type="button" aria-label="Buka keranjang">
+    <span>Keranjang</span>
+    <strong id="cartCount">0</strong>
+  </button>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-panel">
+      <div class="cart-head">
+        <h2>Keranjang</h2>
+        <button class="icon-button" id="closeCart" type="button" aria-label="Tutup keranjang">Tutup</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <form class="checkout-form" id="checkoutForm">
+        <h3>Data pemesan</h3>
+        <input name="name" placeholder="Nama lengkap" required>
+        <input name="phone" placeholder="Nomor WhatsApp" required>
+        <textarea name="address" rows="3" placeholder="Alamat pengiriman" required></textarea>
+        <textarea name="notes" rows="2" placeholder="Catatan tambahan"></textarea>
+        <div class="cart-total"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+        <button class="primary-action full" type="submit">Buat Order</button>
+      </form>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div>
+      <strong id="footerTitle">Pilar Peradaban Dunia</strong>
+      <span id="footerDescription">Website resmi penerbit, toko buku, dan layanan produksi buku.</span>
+    </div>
+    <a id="footerWa" href="https://wa.me/628993998544" target="_blank" rel="noreferrer">Hubungi WhatsApp</a>
+  </footer>
+
+  <script src="script.js?v=20260627-14"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Pilar Peradaban Dunia
+
+Official website: https://peradabandunia.id/
+
+Pilar Peradaban Dunia is an Indonesian publisher, online bookstore, and book production service provider.
+
+Main topics:
+- Publisher profile
+- Online book catalog
+- Book editing services
+- Book layout services
+- Book publishing services
+- Book printing services
+
+Important public pages:
+- Homepage and official profile: https://peradabandunia.id/
+- Book catalog: https://peradabandunia.id/#katalog
+- Publisher information: https://peradabandunia.id/#about
+- Services: https://peradabandunia.id/#layanan
+
+Do not index or summarize private admin/API areas:
+- https://peradabandunia.id/admin.html
+- https://peradabandunia.id/api/
